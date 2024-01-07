@@ -89,15 +89,15 @@ h6 {
 }
 
 body {
-	min-height: 100vh;
+	min-height: 100dvw;
+	min-height: 100dvh;
 	font-size: var(--fs-400);
 	font-family: "Inter", "Lexend Deca", sans-serif;
 	color: #ffffff;
 }
 
 main {
-	width: 100vw;
-	height: 100vh;
+	height: 100dvh;
 	background-color: var(--main-bg-color);
 }
 
@@ -199,15 +199,41 @@ img {
 		/* font size */
 		--fs-xl: 2em;
 		--fs-700: 1.5rem;
-		--fs-600: 1.2rem;
+		--fs-600: 1.1rem;
 		--fs-500: 1rem;
-		--fs-400: 0.9rem;
+		--fs-400: 0.8rem;
 	}
 }
 
 @media screen and (max-width: 72em) {
+	:root {
+		/* font size */
+		--fs-xl: 1.8em;
+		--fs-700: 1.4rem;
+		--fs-600: 1.1rem;
+		--fs-500: 1rem;
+		--fs-400: 0.8rem;
+	}
+
+	.container {
+		padding: 5rem 2rem;
+	}
+
 	.card {
 		grid-template-columns: 1fr;
+	}
+
+	.texts {
+		text-align: center;
+		padding: 2rem;
+		gap: 1rem;
+	}
+
+	.more-info {
+		display: grid;
+		justify-content: center;
+		align-items: center;
+		margin-top: 1.5rem;
 	}
 
 	.img-container {
