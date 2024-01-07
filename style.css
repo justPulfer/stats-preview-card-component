@@ -69,6 +69,7 @@ h6 {
 	--main-bg-color: hsl(233, 47%, 7%);
 	--card-bg-color: hsl(244, 38%, 16%);
 	--accent-color: hsl(277, 64%, 61%);
+	--accent-color-darker: hsl(277, 69%, 43%);
 
 	/* Neutral colors */
 	--main-paragraph-color: hsla(0, 0%, 100%, 0.75);
@@ -76,14 +77,22 @@ h6 {
 
 	/* Font weight */
 	--regular-fw: 400;
+	--semi-bold-fw: 600;
 	--bold-fw: 700;
+
+	/* font size */
+	--fs-xl: 2.5rem;
+	--fs-700: 1.8rem;
+	--fs-600: 1.5rem;
+	--fs-500: 1.25rem;
+	--fs-400: 1rem;
 }
 
 body {
 	min-height: 100vh;
-	font-size: 15px;
+	font-size: var(--fs-400);
 	font-family: "Inter", "Lexend Deca", sans-serif;
-	color: var(--main-paragraph-color);
+	color: #ffffff;
 }
 
 main {
@@ -93,52 +102,115 @@ main {
 }
 
 .container {
-	display: flex;
+	width: 100%;
 	height: 100%;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 0 10%;
 }
 
 .card {
+	max-width: 80%;
 	display: grid;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
 	grid-template-columns: 1fr 1fr;
 	background-color: var(--card-bg-color);
-	justify-content: space-between;
-	align-items: center;
-
 	border-radius: 0.5rem;
 	overflow: hidden;
 }
 
 .texts {
-	display: grid;
-	gap: 1rem;
-	max-width: 80%;
-	padding: 5rem;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	flex-wrap: wrap;
+	padding: 4.5em;
+	gap: 2rem;
+}
+
+.img-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.img-container::after {
+	position: absolute;
+	content: "";
+	background-color: var(--accent-color-darker);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	opacity: 0.5;
 }
 
 .title {
-	font-size: 2.5rem;
+	font-size: var(--fs-xl);
 }
 
-.img-header {
-	width: 100%;
+.title > span {
+	color: var(--accent-color);
+}
+
+.description {
+	max-width: 95%;
+	line-height: 1.8;
+	color: var(--main-paragraph-color);
 }
 
 .more-info {
+	max-width: 90%;
 	display: flex;
+	gap: 2rem;
+	flex: 1;
 	justify-content: space-between;
 	align-items: center;
+	margin-top: 3rem;
 }
 
 .info {
-	display: grid;
-	text-transform: capitalize;
+	font-size: var(--fs-700);
+	font-weight: var(--bold-fw);
 	font-family: "Inter", sans-serif;
+	font-weight: var(--semi-bold-fw);
 }
 
 .info span {
-	font-size: 1.5rem;
-	font-weight: var(--bold-fw);
+	display: grid;
+	font-family: "Lexend Deca", sans-serif;
+	font-weight: var(--regular-fw);
+	font-size: var(--fs-400);
+	color: var(--stat-heading-color);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+@media screen and (max-width: 85.33em) {
+	:root {
+		/* font size */
+		--fs-xl: 2em;
+		--fs-700: 1.5rem;
+		--fs-600: 1.2rem;
+		--fs-500: 1rem;
+		--fs-400: 0.9rem;
+	}
+}
+
+@media screen and (max-width: 72em) {
+	.card {
+		grid-template-columns: 1fr;
+	}
+
+	.img-container {
+		order: -1;
+	}
 }
