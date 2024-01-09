@@ -7,10 +7,11 @@
 	box-sizing: border-box;
 }
 /*
-  2. Remove default margin
+  2. Remove default margin and padding 
 */
 * {
 	margin: 0;
+	padding: 0;
 }
 /*
   Typographic tweaks!
@@ -52,13 +53,6 @@ h4,
 h5,
 h6 {
 	overflow-wrap: break-word;
-}
-/*
-  8. Create a root stacking context
-*/
-#root,
-#__next {
-	isolation: isolate;
 }
 
 /* =========================== */
