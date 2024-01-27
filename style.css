@@ -220,7 +220,13 @@ img {
 		gap: 1rem;
 	}
 
+	.description {
+		margin: auto;
+		max-width: 70%;
+	}
+
 	.more-info {
+		margin: auto;
 		display: grid;
 		justify-content: center;
 		align-items: center;
